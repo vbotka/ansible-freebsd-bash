@@ -1,0 +1,4 @@
+---
+# defaults file for freebsd-bash
+
+freebsd_bash_user: "freebsd"

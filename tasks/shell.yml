@@ -1,0 +1,3 @@
+
+- name: change default shell to bash for {{freebsd_bash_user}}
+  command: "pw usermod {{freebsd_bash_user}} -s /usr/local/bin/bash"
