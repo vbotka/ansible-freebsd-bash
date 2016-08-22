@@ -1,4 +1,5 @@
 ---
-# vars file for freebsd-bash
+# vars for freebsd-bash
 
-#freebsd_bash_user: "freebsd"
+#freebsd_bash_users:
+#  - freebsd

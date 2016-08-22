@@ -1,0 +1,4 @@
+
+- name: change default shell to bash
+  user: name="{{ item }}" shell="/usr/local/bin/bash"
+  with_items: freebsd_bash_users

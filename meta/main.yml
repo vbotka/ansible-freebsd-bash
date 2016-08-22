@@ -1,6 +1,6 @@
 galaxy_info:
   author: Vladimir Botka
-  description: Install bash and change login shell to bash for the specified user.
+  description: Install bash and change login shell to bash for specified users.
   company: https://botka.link
   license: BSD
   min_ansible_version: 1.2

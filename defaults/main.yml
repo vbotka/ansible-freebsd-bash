@@ -1,4 +1,4 @@
 ---
-# defaults file for freebsd-bash
+# default vars for freebsd-bash
 
-freebsd_bash_user: "freebsd"
+freebsd_bash_users: []

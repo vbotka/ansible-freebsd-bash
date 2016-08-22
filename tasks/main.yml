@@ -4,5 +4,5 @@
 - include: packages.yml
   tags: packages
 
-- include: shell.yml
+- include: user.yml
   tags: configure_login_shell
