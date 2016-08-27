@@ -1,4 +1,4 @@
-freebsd-bash
+freebsd-bash ![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)
 ============
 
 This role installs /usr/local/bin/bash and changes the login shell
