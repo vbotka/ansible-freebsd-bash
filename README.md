@@ -2,19 +2,24 @@ freebsd-bash
 ============
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-bash)
+![license](https://img.shields.io/badge/license-BSD-red.svg)
 
-This role installs /usr/local/bin/bash and changes the login shell
+Ansible role. Installs /usr/local/bin/bash and changes the login shell
 for specified users to bash.
 
-Default login shell in FreeBSD is /bin/tcsh. This doesn't work
-properly with ansible as discussed in issues:
+https://galaxy.ansible.com/vbotka/ansible-freebsd-bash/
+
+Tested with fresh droplet 10.3-RELEASE FreeBSD at [digitalocean.com](https://cloud.digitalocean.com).
+
+
+tcsh vs sh
+----------
+
+Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ansible as discussed in issues:
 
 - [fatal error caused by shell type](https://github.com/ansible/ansible/issues/13459)
 
 - [ansible_shell_type and make_become_cmd are at odds](https://github.com/ansible/ansible/issues/13179)
-
-This role was tested with fresh droplet 10.3-RELEASE FreeBSD at
-[digitalocean.com](https://cloud.digitalocean.com).
 
 
 Requirements
