@@ -9,7 +9,7 @@ for specified users to bash.
 
 https://galaxy.ansible.com/vbotka/ansible-freebsd-bash/
 
-Tested with fresh droplet 10.3-RELEASE FreeBSD at [digitalocean.com](https://cloud.digitalocean.com).
+Tested with FreeBSD 10.3 and 11.1.
 
 
 tcsh vs sh
@@ -25,8 +25,7 @@ Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ans
 Requirements
 ------------
 
-Before applying this role it's necessary to change the login shell to
-/bin/sh for ansible_user (see Edit inventory below).
+It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
 
 ```
 ansible do-bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
@@ -48,7 +47,7 @@ Workflow
 1) Install the role from Ansible Galaxy https://galaxy.ansible.com/.
 
 ```
-ansible-galaxy install vbotka.ansible-freebsd-bash
+ansible-galaxy install vbotka.freebsd-bash
 ```
 
 2) Edit inventory.
@@ -82,7 +81,7 @@ cat ~/.ansible/playbooks/freebsd-bash.yml
   become: yes
   become_method: sudo
   roles:
-      - role: vbotka.ansible-freebsd-bash
+      - role: vbotka.freebsd-bash
 ```
 
 5) Edit list of users (vars/main.yml).

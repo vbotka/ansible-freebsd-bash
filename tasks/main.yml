@@ -3,7 +3,10 @@
 # tasks file for freebsd-bash
 
 - include: packages.yml
-  tags: packages
+  tags: bsd_packages
 
 - include: user.yml
-  tags: configure_login_shell
+  tags: bsd_configure_login_shell
+
+# EOF
+...
