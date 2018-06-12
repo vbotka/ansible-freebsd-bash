@@ -1,3 +1,4 @@
 
 - name: Install packages
-  pkgng: name="bash" state="present"
+  pkgng:
+    name: "bash"
