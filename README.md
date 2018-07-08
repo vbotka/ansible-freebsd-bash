@@ -4,12 +4,8 @@ freebsd-bash
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-bash)
 [![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
-Ansible role. Installs /usr/local/bin/bash and changes the login shell
-for specified users to bash.
 
-https://galaxy.ansible.com/vbotka/ansible-freebsd-bash/
-
-Tested with FreeBSD 10.3 and 11.1.
+[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd-bash/) Installs /usr/local/bin/bash and changes the login shell for specified users to bash.
 
 
 tcsh vs sh
@@ -28,7 +24,7 @@ Requirements
 It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
 
 ```
-ansible do-bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+ansible bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 
 ```
 
@@ -52,16 +48,16 @@ ansible-galaxy install vbotka.freebsd-bash
 
 2) Edit inventory.
 
-```
 hosts
 
+```
 [bsd-test]
-139.59.214.27
+<ip-or-hostname>
 
 [bsd-test:vars]
 ansible_connection=ssh
 ansible_user=freebsd
-ansible_python_interpreter=/usr/local/bin/python2
+ansible_python_interpreter=/usr/local/bin/python2.7
 ansible_perl_interpreter=/usr/local/bin/perl
 ```
 
@@ -69,14 +65,14 @@ ansible_perl_interpreter=/usr/local/bin/perl
 
 ```
 ansible bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
-139.59.214.27 | SUCCESS | rc=0 >>
+<ip_sanitized> | SUCCESS | rc=0 >>
 ```
 
 4) Edit playbook.
 
 ```
-cat ~/.ansible/playbooks/freebsd-bash.yml
----
+cat freebsd-bash.yml
+
 - hosts: bsd-test
   become: yes
   become_method: sudo
@@ -84,12 +80,12 @@ cat ~/.ansible/playbooks/freebsd-bash.yml
       - role: vbotka.freebsd-bash
 ```
 
-5) Edit list of users (vars/main.yml).
+5) Edit list of users. For example in vars/main.yml.
 
 6) Run playbook.
 
 ```
-ansible-playbook ~/.ansible/playbooks/freebsd-bash.yml
+ansible-playbook freebsd-bash.yml
 ```
 
 
