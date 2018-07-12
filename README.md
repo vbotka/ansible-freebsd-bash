@@ -24,7 +24,7 @@ Requirements
 It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
 
 ```
-ansible bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 
 ```
 
@@ -48,7 +48,7 @@ ansible-galaxy install vbotka.freebsd-bash
 
 2) Edit inventory.
 
-hosts
+Example of a hosts file.
 
 ```
 [bsd-test]
@@ -64,7 +64,7 @@ ansible_perl_interpreter=/usr/local/bin/perl
 3) Change shell (if necessary).
 
 ```
-ansible bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 <ip_sanitized> | SUCCESS | rc=0 >>
 ```
 
@@ -74,10 +74,8 @@ ansible bsd-test -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -
 cat freebsd-bash.yml
 
 - hosts: bsd-test
-  become: yes
-  become_method: sudo
   roles:
-      - role: vbotka.freebsd-bash
+      - vbotka.freebsd-bash
 ```
 
 5) Edit list of users. For example in vars/main.yml.
