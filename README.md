@@ -5,7 +5,7 @@ freebsd-bash
 [![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
 
-[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd-bash/) Installs /usr/local/bin/bash and changes the login shell for specified users to bash.
+[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd-bash/) FreeBSD. Install /usr/local/bin/bash and change the login shell for specified users to bash.
 
 
 tcsh vs sh
