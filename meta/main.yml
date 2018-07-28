@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: freebsd_bash
   author: Vladimir Botka
   description: FreeBSD. Install bash and change login shell to bash for specified users.
   company: https://botka.link

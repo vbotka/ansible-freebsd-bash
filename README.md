@@ -1,11 +1,11 @@
-freebsd-bash
+freebsd_bash
 ============
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-bash)
 [![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
 
-[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd-bash/) FreeBSD. Install /usr/local/bin/bash and change the login shell for specified users to bash.
+[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_bash/) FreeBSD. Install /usr/local/bin/bash and change the login shell for specified users to bash.
 
 
 tcsh vs sh
@@ -43,7 +43,7 @@ Workflow
 1) Install the role from Ansible Galaxy https://galaxy.ansible.com/.
 
 ```
-ansible-galaxy install vbotka.freebsd-bash
+ansible-galaxy install vbotka.freebsd_bash
 ```
 
 2) Edit inventory.
@@ -75,7 +75,7 @@ cat freebsd-bash.yml
 
 - hosts: bsd-test
   roles:
-      - vbotka.freebsd-bash
+      - vbotka.freebsd_bash
 ```
 
 5) Edit list of users. For example in vars/main.yml.
