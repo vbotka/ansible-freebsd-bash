@@ -1,4 +1,4 @@
-
+---
 - name: Change default shell to bash
   user:
     name: "{{ item }}"
