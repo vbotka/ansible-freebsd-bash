@@ -90,7 +90,7 @@ ansible-playbook freebsd-bash.yml
 License
 -------
 
-BSD
+[![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
 
 Author Information

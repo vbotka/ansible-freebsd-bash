@@ -1,10 +1,10 @@
 ---
-# tasks file for freebsd-bash
+# tasks for freebsd-bash
 
-- include: packages.yml
+- import_tasks: packages.yml
   tags: bsd_packages
 
-- include: user.yml
+- import_tasks: user.yml
   tags: bsd_configure_login_shell
 
 # EOF

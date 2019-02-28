@@ -1,6 +1,9 @@
 ---
-- name: Change default shell to bash
+- name: Change default shell to /usr/local/bin/bash
   user:
     name: "{{ item }}"
     shell: "/usr/local/bin/bash"
-  with_items: "{{ freebsd_bash_users }}"
+  loop: "{{ freebsd_bash_users }}"
+
+# EOF
+...

@@ -1,4 +1,8 @@
 ---
 - name: Install packages
   pkgng:
-    name: "shells/bash"
+    name: "{{ freebsd_bash_install_packages }}"
+  register: result
+  retries: "{{ freebsd_bash_install_retries }}"
+  until: result is succeeded
+  delay: "{{ freebsd_bash_install_delay }}"

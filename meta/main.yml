@@ -8,11 +8,11 @@ galaxy_info:
   company: https://botka.link
   github_branch: master
   license: BSD
-  min_ansible_version: 1.2
+  min_ansible_version: 2.7
   platforms:
     - name: FreeBSD
       versions:
-        - all
+        - 11.2
   galaxy_tags:
     - freebsd
     - bash
