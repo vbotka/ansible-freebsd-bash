@@ -5,7 +5,6 @@ galaxy_info:
   description: |
     FreeBSD. Install bash. Change login shell to bash for
     specified users.
-
   company: https://botka.link
   github_branch: master
   license: BSD
