@@ -1,9 +1,16 @@
 ---
-- name: Change default shell to /usr/local/bin/bash
+
+- name: "user: Change default shell to /usr/local/bin/bash"
   user:
     name: "{{ item }}"
     shell: "/usr/local/bin/bash"
+  register: result
   loop: "{{ freebsd_bash_users }}"
+
+- name: "user: Debug"
+  when: freebsd_bash_debug|bool
+  debug:
+    var: result
 
 # EOF
 ...

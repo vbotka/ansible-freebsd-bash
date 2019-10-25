@@ -2,6 +2,7 @@
 # tasks for freebsd-bash
 
 - import_tasks: packages.yml
+  when: freebsd_bash_install|bool
   tags: bsd_packages
 
 - import_tasks: user.yml

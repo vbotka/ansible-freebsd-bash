@@ -1,8 +1,17 @@
 ---
-- name: Install packages
+
+- name: "packages: Install packages"
   pkgng:
     name: "{{ freebsd_bash_install_packages }}"
   register: result
-  retries: "{{ freebsd_bash_install_retries }}"
   until: result is succeeded
+  retries: "{{ freebsd_bash_install_retries }}"
   delay: "{{ freebsd_bash_install_delay }}"
+
+- name: "packages: Debug"
+  when: freebsd_bash_debug|bool
+  debug:
+    var: result
+
+# EOF
+...
