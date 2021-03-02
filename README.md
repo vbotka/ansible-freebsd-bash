@@ -31,7 +31,7 @@ ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 's
 ## Variables
 
 ```
-freebsd_bash_users	# users whos' login shell will be changed
+freebsd_bash_users	# users whose login shell will be changed
 ```
 
 
