@@ -9,7 +9,7 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 [Contributions are welcome](https://github.com/firstcontributions/first-contributions).
 
 
-## tcsh vs sh
+## tcsh vs. sh
 
 Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ansible as discussed in issues:
 
@@ -19,6 +19,12 @@ Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ans
 
 
 ## Requirements
+
+### Collections
+
+* community.general
+
+### Shell
 
 It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
 
@@ -40,7 +46,7 @@ freebsd_bash_users	# users whose login shell will be changed
 1) Install the role from Ansible Galaxy https://galaxy.ansible.com/
 
 ```
-ansible-galaxy install vbotka.freebsd_bash
+ansible-galaxy role install vbotka.freebsd_bash
 ```
 
 2) Edit inventory
@@ -48,10 +54,10 @@ ansible-galaxy install vbotka.freebsd_bash
 Example of a hosts file
 
 ```
-[bsd-test]
-<ip-or-hostname>
+[bsd_test]
+my_host
 
-[bsd-test:vars]
+[bsd_test:vars]
 ansible_connection=ssh
 ansible_user=freebsd
 ansible_python_interpreter=/usr/local/bin/python3.6
@@ -61,8 +67,8 @@ ansible_perl_interpreter=/usr/local/bin/perl
 3) Change shell (if necessary)
 
 ```
-ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
-<ip_sanitized> | SUCCESS | rc=0 >>
+ansible my_host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+my_host | SUCCESS | rc=0 >>
 ```
 
 4) Edit playbook
@@ -70,12 +76,12 @@ ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 's
 ```
 cat playbook.yml
 
-- hosts: bsd-test
+- hosts: bsd_test
   roles:
       - vbotka.freebsd_bash
 ```
 
-5) Edit list of users. For example in vars/main.yml.
+5) Edit and change the list of users to your needs.
 
 6) Run playbook
 
