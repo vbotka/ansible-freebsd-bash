@@ -1,5 +1,5 @@
 ---
-# tasks for freebsd-bash
+# tasks for freebsd_bash
 
 - import_tasks: packages.yml
   when: freebsd_bash_install|bool
