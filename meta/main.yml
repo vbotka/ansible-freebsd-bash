@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  namesplace: vbotka
+  namespace: vbotka
   role_name: freebsd_bash
   author: Vladimir Botka
   description: FreeBSD. Install bash. Change login for specified users.
