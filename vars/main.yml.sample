@@ -1,5 +1,5 @@
 ---
-# vars for freebsd-bash
+# vars samples for freebsd_bash
 
 # freebsd_bash_users:
 #  - freebsd

@@ -1,11 +1,13 @@
 ---
 # tasks for freebsd_bash
 
-- import_tasks: packages.yml
+- name: Import packages.yml
+  ansible.builtin.import_tasks: packages.yml
   when: freebsd_bash_install|bool
   tags: bsd_packages
 
-- import_tasks: user.yml
+- name: Import user.yml
+  ansible.builtin.import_tasks: user.yml
   tags: bsd_configure_login_shell
 
 # EOF
