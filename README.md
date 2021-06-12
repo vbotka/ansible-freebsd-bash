@@ -43,10 +43,11 @@ freebsd_bash_users	# users whose login shell will be changed
 
 ## Workflow
 
-1) Install the role from Ansible Galaxy https://galaxy.ansible.com/
+1) Install the role and collections from Ansible Galaxy https://galaxy.ansible.com/
 
 ```
 ansible-galaxy role install vbotka.freebsd_bash
+ansible-galaxy collection install community.general
 ```
 
 2) Edit inventory
@@ -81,7 +82,7 @@ cat playbook.yml
       - vbotka.freebsd_bash
 ```
 
-5) Edit and change the list of users to your needs.
+5) Edit and change the list of users to your needs. See defaults/main.yml
 
 6) Run playbook
 
