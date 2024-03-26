@@ -28,15 +28,15 @@ Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ans
 
 It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
 
-```
-ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+```bash
+shell> ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 
 ```
 
 
 ## Variables
 
-```
+```yaml
 freebsd_bash_users	# users whose login shell will be changed
 ```
 
@@ -45,37 +45,37 @@ freebsd_bash_users	# users whose login shell will be changed
 
 1) Install the role and collections from Ansible Galaxy https://galaxy.ansible.com/
 
-```
-ansible-galaxy role install vbotka.freebsd_bash
-ansible-galaxy collection install community.general
+```bash
+shell> ansible-galaxy role install vbotka.freebsd_bash
+shell> ansible-galaxy collection install community.general
 ```
 
 2) Edit inventory
 
 Example of a hosts file
 
-```
+```ini
 [bsd_test]
 my_host
 
 [bsd_test:vars]
 ansible_connection=ssh
 ansible_user=freebsd
-ansible_python_interpreter=/usr/local/bin/python3.6
+ansible_python_interpreter=/usr/local/bin/python3.9
 ansible_perl_interpreter=/usr/local/bin/perl
 ```
 
 3) Change shell (if necessary)
 
-```
-ansible my_host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
+```bash
+shell> ansible my_host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 my_host | SUCCESS | rc=0 >>
 ```
 
 4) Edit playbook
 
-```
-cat playbook.yml
+```yaml
+shell> cat playbook.yml
 
 - hosts: bsd_test
   roles:
@@ -86,8 +86,8 @@ cat playbook.yml
 
 6) Run playbook
 
-```
-ansible-playbook playbook.yml
+```bash
+shell> ansible-playbook playbook.yml
 ```
 
 

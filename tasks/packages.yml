@@ -1,6 +1,5 @@
 ---
-
-- name: "packages: Install packages"
+- name: "Packages: Install packages"
   community.general.pkgng:
     name: "{{ freebsd_bash_install_packages }}"
   register: result
@@ -8,10 +7,9 @@
   retries: "{{ freebsd_bash_install_retries }}"
   delay: "{{ freebsd_bash_install_delay }}"
 
-- name: "packages: Debug"
+- name: "Packages: Debug"
   ansible.builtin.debug:
     var: result
-  when: freebsd_bash_debug|bool
+  when: freebsd_bash_debug | bool
 
 # EOF
-...
