@@ -3,7 +3,7 @@
 
 - name: Import packages.yml
   ansible.builtin.import_tasks: packages.yml
-  when: freebsd_bash_install|bool
+  when: freebsd_bash_install | bool
   tags: bsd_packages
 
 - name: Import user.yml
@@ -11,4 +11,3 @@
   tags: bsd_configure_login_shell
 
 # EOF
-...

@@ -10,6 +10,3 @@ freebsd_bash_install_packages:
   - shells/bash
 
 freebsd_bash_users: []
-
-# EOF
-...
