@@ -14,6 +14,7 @@ Bug fix
 
 Major Changes
 -------------
+* 12.4 not supported
 
 Minor Changes
 -------------
