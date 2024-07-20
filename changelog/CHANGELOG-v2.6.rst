@@ -10,14 +10,15 @@ vbotka.freebsd_bash 2.6 Release Notes
 
 Release Summary
 ---------------
-Bug fix
+Ansible 2.17 update
 
 Major Changes
 -------------
-* 12.4 not supported
+* Add 14.1 supported
 
 Minor Changes
 -------------
+* Update README
 * Fix README tag badge.
 * Use default rules in local ansible-lint config.
 * Update skip_list in local ansible-lint config.

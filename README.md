@@ -1,6 +1,8 @@
 # freebsd_bash
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_bash)[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-bash)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-bash)](https://github.com/vbotka/ansible-freebsd-bash/tags)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_bash)
+[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-bash.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-bash)
+[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-bash)](https://github.com/vbotka/ansible-freebsd-bash/tags)
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_bash/) FreeBSD. Install /usr/local/bin/bash and change the login shell for specified users to bash.
 
@@ -13,9 +15,8 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ansible as discussed in issues:
 
-- [fatal error caused by shell type](https://github.com/ansible/ansible/issues/13459)
-
-- [ansible_shell_type and make_become_cmd are at odds](https://github.com/ansible/ansible/issues/13179)
+* [fatal error caused by shell type](https://github.com/ansible/ansible/issues/13459)
+* [ansible_shell_type and make_become_cmd are at odds](https://github.com/ansible/ansible/issues/13179)
 
 
 ## Requirements
@@ -26,11 +27,11 @@ Default login shell in FreeBSD is /bin/tcsh. This doesn't work properly with ans
 
 ### Shell
 
-It is necessary to change the login shell to /bin/sh for ansible_user (see Edit inventory below) before applying this role .
+It is necessary to change the login shell to /bin/sh for ansible_user
+(see Edit inventory below) before applying this role.
 
-```bash
+```sh
 shell> ansible host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
-
 ```
 
 
@@ -45,7 +46,7 @@ freebsd_bash_users	# users whose login shell will be changed
 
 1) Install the role and collections from Ansible Galaxy https://galaxy.ansible.com/
 
-```bash
+```sh
 shell> ansible-galaxy role install vbotka.freebsd_bash
 shell> ansible-galaxy collection install community.general
 ```
@@ -67,7 +68,7 @@ ansible_perl_interpreter=/usr/local/bin/perl
 
 3) Change shell (if necessary)
 
-```bash
+```sh
 shell> ansible my_host -e 'ansible_shell_type=csh ansible_shell_executable=/bin/csh' -a 'sudo pw usermod freebsd -s /bin/sh'
 my_host | SUCCESS | rc=0 >>
 ```
@@ -76,7 +77,6 @@ my_host | SUCCESS | rc=0 >>
 
 ```yaml
 shell> cat playbook.yml
-
 - hosts: bsd_test
   roles:
       - vbotka.freebsd_bash
@@ -86,7 +86,7 @@ shell> cat playbook.yml
 
 6) Run playbook
 
-```bash
+```sh
 shell> ansible-playbook playbook.yml
 ```
 
@@ -97,7 +97,7 @@ Use the configuration file *.ansible-lint.local* when running
 *ansible-lint*. Some rules might be disabled and some warnings might
 be ignored. See the notes in the configuration file.
 
-```bash
+```sh
 shell> ansible-lint -c .ansible-lint.local
 ```
 
@@ -109,4 +109,4 @@ shell> ansible-lint -c .ansible-lint.local
 
 ## Author Information
 
-[Vladimir Botka](https://botka.link)
+[Vladimir Botka](https://botka.info)
