@@ -7,7 +7,7 @@
   retries: "{{ freebsd_bash_install_retries }}"
   delay: "{{ freebsd_bash_install_delay }}"
 
-- name: "Packages: Debug"
+- name: "Packages: Debug freebsd_bash_debug={{ freebsd_bash_debug }}"
   ansible.builtin.debug:
     var: result
   when: freebsd_bash_debug | bool

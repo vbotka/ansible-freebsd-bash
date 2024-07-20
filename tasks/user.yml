@@ -6,7 +6,7 @@
   register: result
   loop: "{{ freebsd_bash_users }}"
 
-- name: "User: Debug"
+- name: "User: Debug freebsd_bash_debug={{ freebsd_bash_debug }}"
   ansible.builtin.debug:
     var: result
   when: freebsd_bash_debug | bool
