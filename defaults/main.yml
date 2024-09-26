@@ -1,5 +1,6 @@
 ---
 # default vars for freebsd_bash
+freebsd_bash_role_version: 2.6.2
 
 freebsd_bash_debug: false
 freebsd_bash_install: true
